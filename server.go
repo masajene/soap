@@ -243,3 +243,8 @@ func jsonDump(v interface{}) string {
 func (s *Server) ListenAndServe(addr string) error {
 	return http.ListenAndServe(addr, s)
 }
+
+// ListenAndServeTLS run standalone
+func (s *Server) ListenAndServeTLS(addr string, certFile string, keyFile string) error {
+	return http.ListenAndServeTLS(addr, certFile, keyFile, s)
+}
